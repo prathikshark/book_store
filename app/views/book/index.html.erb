@@ -1,0 +1,19 @@
+
+<div class="contain">
+<%for book in @books%>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= book.name%></h5>
+        <h5 class="author"><%=book.author%></h5>
+        <p class="card-text"><%= book.description%></p>
+        <a href="#" class="btn btn-primary">Add</a>
+      </div>
+    </div>
+  </div>
+</div>
+<%end%>
+</div>
+
+
