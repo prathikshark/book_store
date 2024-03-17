@@ -8,15 +8,23 @@
       <li class="nav-item active">
       <%= link_to 'Home' ,root_path ,class: 'nav-link' %>
       </li>
+
+      
       <li class="nav-item">
-        <a class="nav-link" href="#">SignUp</a>
+      <%= link_to 'Logout', 'logout_path',method: :delete, class: 'nav-link'%>
+       </li>
+      <li class="nav-item">
+      <%= link_to 'SignUp' ,signup_path ,class: 'nav-link' %>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">LogIn</a>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">LogOut</a>
-      </li>
+      <%= link_to 'cart' ,cart_path ,class: 'nav-link' %>
+    </li>
+   
+     
     </ul>
   </div>
 </nav>

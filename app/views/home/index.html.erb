@@ -1,1 +1,4 @@
 <h1> Welcome!!!</h1>
+<% if current_user %>
+  <%= link_to 'Buy', book_path, class: 'btn btn-primary' %>
+<% end %>
