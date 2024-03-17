@@ -3,4 +3,6 @@ class BookController < ApplicationController
     #display all books
     @books=Book.all
   end
+
+ 
 end

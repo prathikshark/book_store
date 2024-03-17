@@ -1,19 +1,31 @@
+<style>
+.container{
+  margin-top:20px;
+  justify-self:center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+.c{
+  border-radius:7px;
+  background-color: lightblue;
+  padding: 20px;
+  text-align: center;
+}
 
-<div class="contain">
+</style>
+
+
+<div class="container">
 <%for book in @books%>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><%= book.name%></h5>
-        <h5 class="author"><%=book.author%></h5>
-        <p class="card-text"><%= book.description%></p>
-        <a href="#" class="btn btn-primary">Add</a>
-      </div>
-    </div>
+<div class="c">
+  <div class="c-body">
+    <h5 class="c-title"><%= book.name%></h5>
+    <h6 class="author"><%= book.author%></h6>
+    <p class="c-text"><%= book.description%></pp>
+   <div> <%= link_to "Add",{controller: 'userbooks' , action: 'add_book_to_user' }, class: 'btn btn-primary' %></div>
   </div>
 </div>
-<%end%>
+<% end %>
 </div>
-
 
