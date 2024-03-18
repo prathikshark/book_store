@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
     flash[:take]="Logged in Successfully"
-    @show_navbar = true
+        @show_logout_cart=true;
+       @show_navbar = true
   end
 end

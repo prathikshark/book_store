@@ -1,5 +1,6 @@
 <style>
 h1{
+  margin-top:30px;
   margin-left:600px;
 }
    .container{
@@ -24,19 +25,17 @@ h1{
 <% if @books.present? %>
 <% @books.each do |book| %>
     <div class="row"> 
+      <p class="r"> <%= book.id %> </p>
     <p class="r"> <%= book.name %> </p>
     <p class="r"><%= book.author %></p>
     <p class="r">Rs. <%= book.price %></p> 
-    
-    <%= form_tag remove_from_cart_path, method: :post do %>
-      <%= hidden_field_tag 'book_id', book.id %>
-      <%= submit_tag 'Remove', class: 'btn btn-danger' %>
-    <% end %>
+    <%= button_to 'delete', test_path ,method: :delete,params: {id: book.id} ,class: 'btn btn-danger'%>
+
 
   </div>
     <% end %>
     <% else %>
-    <p>No books found.</p>
+    <p>YOUR CART IS EMPTY!!</p>
 <% end %>   
 </div>
 

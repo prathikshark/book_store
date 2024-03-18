@@ -1,0 +1,23 @@
+<%= form_with model: @user ,url: login_path do |form| %> 
+
+   <% if @user.errors.any? %>
+    <div class="alert alert-danger">
+    <% @user.errors.full_messages.each do |messages| %>
+        <div><%= messages %> </div>
+        <% end %>   
+    </div>
+    <% end %>
+
+   
+
+    <div class="mb-3">
+        <%= form.label :name %>
+    <%= form.text_field :name, class:"form-control",placeholder:"david" %>
+    </div>
+    <div class="mb-3">
+    <%= form.label :address %>
+<%= form.text_field :address, class:"form-control",placeholder:"marathalli" %>
+</div>
+
+
+<% end %>
