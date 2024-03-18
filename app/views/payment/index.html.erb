@@ -1,0 +1,19 @@
+<%= form_tag(payment_path, method: :post) do %>
+    <div class="form-group">
+      <%= label_tag(:card_number, "Card Number") %>
+      <%= text_field_tag(:card_number, nil, class: "form-control", placeholder: "Enter card number") %>
+    </div>
+  
+    <div class="form-group">
+      <%= label_tag(:expiry_date, "Expiry Date") %>
+      <%= text_field_tag(:expiry_date, nil, class: "form-control", placeholder: "MM/YYYY") %>
+    </div>
+  
+    <div class="form-group">
+      <%= label_tag(:cvv, "CVV") %>
+      <%= text_field_tag(:cvv, nil, class: "form-control", placeholder: "Enter CVV") %>
+    </div>
+  
+    <%= submit_tag("Finish", class: "btn btn-primary") %>
+  <% end %>
+  

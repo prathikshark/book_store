@@ -1,0 +1,17 @@
+<h1>login page</h1>
+
+<%= form_with model: @user ,url: login_path do |form| %> 
+
+    <div class="mb-3">
+    <%= form.label :email %>
+<%= form.text_field :email, class:"form-control",placeholder:"david@gmail.com" %>
+</div>
+<div class="mb-3">
+    <%= form.label :password %>
+<%= form.password_field :password ,class:"form-control",placeholder:"****" %>
+</div>
+<div class="mb-3">
+<%= form.submit "login" ,class:"btn btn-primary"%>
+</div>
+
+<% end %>

@@ -21,6 +21,7 @@ h1{
 
 
 <h1>YOUR BOOKS</h1>
+
 <div  class="container">
 <% if @books.present? %>
 <% @books.each do |book| %>
@@ -38,5 +39,10 @@ h1{
     <p>YOUR CART IS EMPTY!!</p>
 <% end %>   
 </div>
+
+
+<div class="total"><%= @total %> </div>
+<%= button_to 'Pay',payment_path ,method: :get ,class: 'btn btn-primary'%>
+
 
 

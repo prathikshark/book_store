@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_03_17_151021) do
+ActiveRecord::Schema.define(version: 2024_03_18_181824) do
 
   create_table "books", force: :cascade do |t|
     t.string "name"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2024_03_17_151021) do
   end
 
   create_table "userbooks", force: :cascade do |t|
-    t.integer "bk_id", null: false
+    t.integer "book_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2024_03_17_151021) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password"
+    t.string "password_digest"
   end
 
   add_foreign_key "books", "bookstores"
