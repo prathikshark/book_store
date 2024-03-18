@@ -9,21 +9,23 @@
       <%= link_to 'Home' ,root_path ,class: 'nav-link' %>
       </li>
 
-      
+   <% if @show_logout_cart %>
+   <li class="nav-item">
+   <%= link_to 'cart' ,cart_path ,class: 'nav-link' %>
+    </li>
       <li class="nav-item">
       <%= link_to 'Logout', 'logout_path',method: :delete, class: 'nav-link'%>
        </li>
+   <% end %>
+
+     <% if @show_navbar %>
       <li class="nav-item">
       <%= link_to 'SignUp' ,signup_path ,class: 'nav-link' %>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">LogIn</a>
       </li>
-
-      <li class="nav-item">
-      <%= link_to 'cart' ,cart_path ,class: 'nav-link' %>
-    </li>
-   
+   <% end %>
      
     </ul>
   </div>

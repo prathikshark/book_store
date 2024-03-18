@@ -1,4 +1,17 @@
-<h1> Welcome!!!</h1>
+
+<style>
+   .heading{
+    margin-left:500px;
+   }
+
+.btn{
+margin-left:320px;
+}
+
+</style>
+
+
+<h1 class="heading"> Welcome to  RK stores!!!</h1>
 <% if current_user %>
-  <%= link_to 'Buy', book_path, class: 'btn btn-primary' %>
+  <p class="btn"><%= link_to 'Buy Books', book_path, class: 'btn btn-primary' %></p>
 <% end %>
