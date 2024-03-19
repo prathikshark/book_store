@@ -1,33 +1,42 @@
+<style>
+.navbar{
+  background-color:rgb(37,44,52);
+}
+</style>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">R K STORE</a>
+<nav class="navbar navbar-expand-lg  ">
+  <a class="logo" href="#", style= 'color: white ;margin-right:20px' >BOOKWORM</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-      <%= link_to 'Home' ,root_path ,class: 'nav-link' %>
+      <li class="nav-item">
+      <%= link_to 'Home' ,root_path ,class: 'nav-link' , style: 'color: white;' %>
       </li>
 
 
 
      <% if @show_navbar %>
       <li class="nav-item">
-      <%= link_to 'SignUp' ,signup_path ,class: 'nav-link' %>
+      <%= link_to 'SignUp' ,signup_path ,class: 'nav-link', style: 'color: white;' %>
       </li>
       <li class="nav-item">
-        <%= link_to 'Login' ,login_path,class: 'nav-link'%>
+        <%= link_to 'Login' ,login_path,class: 'nav-link', style: 'color: white;'%>
       </li>
    <% end %>
 
       <% if @show_logout_cart %>
+      <li class="nav-item">
+      <%= link_to 'Books' ,book_path ,class: 'nav-link', style: 'color: white;' %>
+       </li>
    <li class="nav-item">
-   <%= link_to 'cart' ,cart_path ,class: 'nav-link' %>
+   <%= link_to 'cart' ,cart_path ,class: 'nav-link', style: 'color: white;' %>
     </li>
+  
       <li class="nav-item lo">
-      <%= button_to 'Logout', logout_path ,method: :delete, class: "nav-link btn btn-danger",style:"margin-left:75vw"%>
+      <%= button_to 'Logout', logout_path ,method: :delete, class: "nav-link btn btn-danger", style: "margin-left:67svw"%>
        </li>
    <% end %>
      

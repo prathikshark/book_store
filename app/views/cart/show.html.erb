@@ -2,6 +2,7 @@
 h1{
   margin-top:30px;
   margin-left:600px;
+  color:white;
 }
    .container{
     display:grid;
@@ -17,6 +18,30 @@ h1{
     border-radius:10px;
 
    }
+   .r{
+    font-size:20px;
+   }
+   .p1{
+    color:white;
+    font-size:20px;
+   }
+   .a{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    margin-left:44vw;
+    margin-top:30px;
+    
+   }
+   .total{
+    color:white;
+    font-size:25px;
+
+   }
+   .btn{
+    margin-left:80px;
+    margin-top:10px;
+   }
 </style>
 
 
@@ -24,25 +49,27 @@ h1{
 
 <div  class="container">
 <% if @books.present? %>
+<%i=1%>
 <% @books.each do |book| %>
     <div class="row"> 
-      <p class="r"> <%= book.id %> </p>
+     <p class="r"> <%= i %>.</p>
     <p class="r"> <%= book.name %> </p>
     <p class="r"><%= book.author %></p>
     <p class="r">Rs. <%= book.price %></p> 
     <%= button_to 'delete', test_path ,method: :delete,params: {id: book.id} ,class: 'btn btn-danger'%>
-
+<% i=i+1 %>
 
   </div>
     <% end %>
     <% else %>
-    <p>YOUR CART IS EMPTY!!</p>
+    <p class="p1">YOUR CART IS EMPTY :(</p>
 <% end %>   
 </div>
 
-
-<div class="total"><%= @total %> </div>
+<div class="a">
+<div class="total">total amount: <%= @total %> </div>
 <%= button_to 'Pay',payment_path ,method: :get ,class: 'btn btn-primary'%>
+</div>
 
 
 

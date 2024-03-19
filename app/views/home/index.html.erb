@@ -1,14 +1,30 @@
 
 <style>
+.{
+  box-size:border-box;
+}
    .heading{
     margin-left:40vw;
+    color:white;
    }
 
 .btn{
 margin-left:21vw;
 }
-.image{
-  width:300px;
+.bg{
+  width:85vw;
+  height:35vw;
+  margin-left:8vw;
+  border-radius:10px;
+}
+.imgs{
+  padding:50px;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+}
+.i{
+  width:400px;
 }
 </style>
 
@@ -17,3 +33,10 @@ margin-left:21vw;
 <% if current_user %>
   <p class="btn"><%= link_to 'Buy Books', book_path, class: 'btn btn-primary' %></p>
 <% end %>
+<%= image_tag 'bg1.avif' ,class: 'bg'%>
+
+<div class="imgs">
+<%= image_tag 'bg1.avif' ,class: 'i'%>
+<%= image_tag 'bg2.avif' ,class: 'i'%>
+<%= image_tag 'bg3.avif' ,class: 'i'%>
+</div>
