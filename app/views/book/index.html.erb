@@ -17,22 +17,18 @@ color:white;
   text-align: center;
 
 }
-
-
-
 </style>
+
 <h1>BOOKS</h1>
 <div class="container">
   
 <% for book in @books %>
 <div class="c", style= 'background-color:lightblue'>
   <div class="c-body">
-    <h5 class="c-title"><%= book.name%></h5>
-    <h5 class="c-title" ><%= book.id%></h5>
-    <h6 class="author"><%= book.author%></h6>
-    <p class="c-text"><%= book.description%></p>
-    <p class="c-text">Price: <%= book.price%></p>
-    <p class="c-text">available: <%= book.quantity%></pp>
+
+
+
+    <%= render partial:"shared/book", locals:{book: book}%>
    <div> <%= link_to "Add",{controller: 'userbooks' , action: 'add_book_to_user' ,book_id: book.id },class: 'btn btn-primary' %></div>
   </div>
 </div>

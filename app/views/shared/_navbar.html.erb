@@ -39,6 +39,12 @@
       <%= button_to 'Logout', logout_path ,method: :delete, class: "nav-link btn btn-danger", style: "margin-left:67svw"%>
        </li>
    <% end %>
+
+   <% if @admin %>
+   <li class="nav-item">
+   <%= link_to 'All books' ,book_path ,class: 'nav-link', style: 'color: white;' %>
+    </li>
+    <% end %>
      
     </ul>
   </div>

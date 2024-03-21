@@ -1,0 +1,74 @@
+<style>
+.*{
+    margin:0;
+    padding:0;
+    box-size:content-box;
+   
+}
+.bdy{
+    background-color:rgb(37,44,52);
+
+}
+h1{
+  margin-bottom:30px;
+  margin-left:48vw;
+  color:white;
+}
+.frm{
+    display:flex;
+    width:550px;
+    margin-left:37vw;
+    justify-content:center;
+    # background-color:rgb(80,179,246);
+    # background-color:rgb(131,182,51);
+    background-color:lightblue;
+    border-radius:10px;
+    padding:20px;
+}
+form{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    width:500px;
+   
+    
+}
+
+</style>
+<div class="bdy">
+
+<h1>add books<h1>
+<h6 class="frm">
+   <%= form_with model: @book ,url: admin_path do |form| %> 
+   
+
+    <div class="mb-3">
+        <%= form.label :name %>
+    <%= form.text_field :name, class:"form-control" %>
+    </div>
+    <div class="mb-3">
+    <%= form.label :author %>
+<%= form.text_field :author, class:"form-control" %>
+</div>
+
+<div class="mb-3">
+<%= form.label :description %>
+<%= form.text_field :description, class:"form-control" %>
+</div>
+
+    <div class="mb-3">
+        <%= form.label :quantity %>
+    <%= form.text_field :quantity, class:"form-control"%>
+    </div>
+    <div class="mb-3">
+        <%= form.label :price %>
+    <%= form.password_field :price ,class:"form-control"%>
+    </div>
+
+
+    <div class="mb-3">
+        <%= form.submit "add" ,class:"btn btn-primary"%>
+    </div>
+   <% end %>
+</h6> 
+</div>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
   get 'home' ,to:'home#index'
+
   get 'signup' ,to: 'registration#new'
   post 'signup' ,to: 'registration#create'   
 
@@ -8,7 +9,10 @@ Rails.application.routes.draw do
   post 'login', to:'session#create'
   delete 'logout', to: 'session#destroy'  
 
-  
+  get 'admin',to:'admin#create'
+  get 'admin/edit',to:'admin#update'
+  delete 'admin/delete' ,to: 'admin#delete'
+
   get 'book',to: 'book#index'
 
   get 'cart', to:'cart#show'

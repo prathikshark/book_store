@@ -14,10 +14,7 @@ class CartController < ApplicationController
   end
 
   def total
-   tot=0;
-  @books.each do |book|
-    tot+=book.price
+    total=@books.sum(:price)
+    return total
    end
-   return tot
-  end
 end
