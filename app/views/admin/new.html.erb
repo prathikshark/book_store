@@ -40,8 +40,6 @@ form{
 <h1>add books<h1>
 <h6 class="frm">
    <%= form_with model: @book ,url: admin_path do |form| %> 
-   
-
     <div class="mb-3">
         <%= form.label :name %>
     <%= form.text_field :name, class:"form-control" %>
@@ -58,13 +56,20 @@ form{
 
     <div class="mb-3">
         <%= form.label :quantity %>
-    <%= form.text_field :quantity, class:"form-control"%>
+    <%= form.number_field :quantity, class:"form-control"%>
     </div>
     <div class="mb-3">
         <%= form.label :price %>
-    <%= form.password_field :price ,class:"form-control"%>
+    <%= form.number_field :price ,class:"form-control"%>
     </div>
-
+      <div class="mb-3">
+     <%= form.label :bookstore_id %>
+    <%= form.number_field :bookstore_id ,class:"form-control"%>
+    </div>
+      <div class="mb-3">
+     <%= form.label :img %>
+    <%= form.file_field :img ,class:"form-control"%>
+    </div>
 
     <div class="mb-3">
         <%= form.submit "add" ,class:"btn btn-primary"%>

@@ -9,9 +9,11 @@ Rails.application.routes.draw do
   post 'login', to:'session#create'
   delete 'logout', to: 'session#destroy'  
 
-  get 'admin',to:'admin#create'
-  get 'admin/edit',to:'admin#update'
-  delete 'admin/delete' ,to: 'admin#delete'
+  get 'admin',to:'admin#new'
+  post 'admin',to:'admin#create'
+  get 'show' ,to:'admin#show'
+  delete 'delete' ,to:'admin#delete'
+  
 
   get 'book',to: 'book#index'
 

@@ -23,13 +23,8 @@ class UserbooksController < ApplicationController
 
 
   def test
-    puts "---------------------------------"
-    puts @userbook
-    puts @user_id
-    puts "================================"
+   
     @id=session[:user_id]
-    puts "---------------------------------"
-    puts @user_id
     @temp=params[:id] #book id
     @demo=Userbook.find_by(user_id:@id,book_id: @temp)
 
@@ -41,3 +36,4 @@ flash[:notice] = "Book is deleted"
     
   end
 end
+  

@@ -17,6 +17,10 @@ color:white;
   text-align: center;
 
 }
+.image{
+width:100px;
+height:100px
+}
 </style>
 
 <h1>BOOKS</h1>
@@ -25,17 +29,17 @@ color:white;
 <% for book in @books %>
 <div class="c", style= 'background-color:lightblue'>
   <div class="c-body">
+    <%if book.img.attached?%>
+     <%= image_tag (url_for (book.img)),class: "image"%>
+     <%end%>
+      <%= render partial:"shared/book", locals:{book: book}%>
+       <%= button_to 'delete', delete_path ,method: :delete,params: {id: book.id} ,class: 'btn btn-danger'%>
 
-
-
-    <%= render partial:"shared/book", locals:{book: book}%>
-   <div> <%= link_to "Add",{controller: 'userbooks' , action: 'add_book_to_user' ,book_id: book.id },class: 'btn btn-primary' %></div>
   </div>
 </div>
 <% end %>
 
 </div>
-
 
 <div class="digg_pagination">
     <div class="page_info">
