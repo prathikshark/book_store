@@ -17,6 +17,11 @@ color:white;
   text-align: center;
 
 }
+.image{
+width:120px;
+height:120px;
+border-radius:5px
+}
 </style>
 
 <h1>BOOKS</h1>
@@ -27,6 +32,7 @@ color:white;
   <div class="c-body">
 
 
+  <%= image_tag (url_for (book.img)),class: "image"%>
 
     <%= render partial:"shared/book", locals:{book: book}%>
    <div> <%= link_to "Add",{controller: 'userbooks' , action: 'add_book_to_user' ,book_id: book.id },class: 'btn btn-primary' %></div>
