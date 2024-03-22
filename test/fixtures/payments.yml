@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  card_number: MyString
+  expiry: 2024-03-22
+  cvv: MyString
+
+two:
+  card_number: MyString
+  expiry: 2024-03-22
+  cvv: MyString
