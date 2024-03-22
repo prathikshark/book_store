@@ -6,10 +6,11 @@ class SessionController < ApplicationController
     def create
         user=User.find_by(email: params[:email])
           if user.present? && user.authenticate(params[:password])
-               if user.isadmin?
+              session[:user_id]=user.id   
+              if user.isadmin?
                  redirect_to admin_path
               else
-                 session[:user_id]=user.id
+                 
                  redirect_to root_path , notice: 'logged in succesfully'
                end
           else

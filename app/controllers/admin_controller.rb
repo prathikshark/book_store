@@ -6,11 +6,7 @@ class AdminController < ApplicationController
      
     def create
          @book=Book.new(books_params)
-          puts "==============================="
-        
       if @book.save
-        
-        
           redirect_to show_path, notice:"book created"
       else
           puts @book.errors.full_messages

@@ -5,12 +5,5 @@ class User < ApplicationRecord
     has_many :userbooks, dependent: :destroy
     has_many :books, through: :userbooks
     has_many :payments
-   
-after_create :welcome_send
-
-def welcome_send
-   WelcomeMailer.welcome_send(self).deliver
-end
-
 end
 

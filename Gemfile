@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
+gem 'mysql2'
+
 gem 'rails', '~> 6.1.7', '>= 6.1.7.7'
 gem 'will_paginate', '~> 4.0'
 gem "devise"
@@ -25,6 +27,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -37,6 +40,8 @@ group :development, :test do
 end
 
 group :development do
+ gem 'ruby-debug-ide', require: false
+  gem 'debug'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
@@ -50,6 +55,8 @@ group :test do
   gem 'selenium-webdriver', '>= 4.0.0.rc1'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+    gem 'minitest'
+gem 'test-unit'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

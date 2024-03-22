@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2024_03_22_022025) do
 
-  create_table "active_storage_attachments", force: :cascade do |t|
+  create_table "active_storage_attachments", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
     t.bigint "record_id", null: false
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2024_03_22_022025) do
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
-  create_table "active_storage_blobs", force: :cascade do |t|
+  create_table "active_storage_blobs", charset: "utf8mb3", force: :cascade do |t|
     t.string "key", null: false
     t.string "filename", null: false
     t.string "content_type"
@@ -34,17 +34,17 @@ ActiveRecord::Schema.define(version: 2024_03_22_022025) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "active_storage_variant_records", force: :cascade do |t|
+  create_table "active_storage_variant_records", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "books", force: :cascade do |t|
+  create_table "books", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.string "author"
-    t.integer "bookstore_id", null: false
+    t.bigint "bookstore_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "quantity"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2024_03_22_022025) do
     t.index ["bookstore_id"], name: "index_books_on_bookstore_id"
   end
 
-  create_table "bookstores", force: :cascade do |t|
+  create_table "bookstores", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.string "phone"
@@ -62,26 +62,26 @@ ActiveRecord::Schema.define(version: 2024_03_22_022025) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "payments", force: :cascade do |t|
+  create_table "payments", charset: "utf8mb3", force: :cascade do |t|
     t.string "card_number"
     t.date "expiry"
     t.string "cvv"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
-  create_table "userbooks", force: :cascade do |t|
-    t.integer "book_id", null: false
-    t.integer "user_id", null: false
+  create_table "userbooks", charset: "utf8mb3", force: :cascade do |t|
+    t.bigint "book_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["book_id"], name: "index_userbooks_on_book_id"
     t.index ["user_id"], name: "index_userbooks_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.string "phone"

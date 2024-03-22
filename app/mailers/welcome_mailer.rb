@@ -1,7 +1,6 @@
 class WelcomeMailer < ApplicationMailer
 
-    def welcome_send(user)
-      @user=user
-      mail to: user.email, subject:"Welcome to my site", from:"prathikshark2002@gmail.com"
+    def welcome_send
+      mail  to: 'manikantap036@gmail.com', subject:"Welcome to my site"
     end
 end
